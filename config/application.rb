@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# This is your top-level documentation comment for the module.
 require_relative 'boot'
 
 require 'rails/all'
