@@ -3,7 +3,7 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   after_save :update_post_comment
-  
+
   private
 
   def update_post_comment
