@@ -1,1 +1,14 @@
-<h1>Show Post by id</h1>
+<div>
+ <a href="/users/<%= @post.author.id %>/posts/<%= @post.id %>" class="text-decoration-none">
+    <div class="container-post">
+      <div class= post-details>
+        <div>
+            <span><%= @post.title%></span> by: <span> <%= @post.author.name%><span>
+            <p><%= @post.text%></p>
+        </div>
+        <%= render 'shared/reaction', post:@post%>
+      </div>  
+        <%= render 'shared/comment', comments: @post.comments unless @post.comments.empty? %> 
+    </div>  
+ </a>
+ </div>

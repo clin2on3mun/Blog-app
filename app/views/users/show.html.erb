@@ -1,1 +1,18 @@
-<h1>user profile </h1>
+<div class="container">
+    <a href = "/users/<%= @user.id %>">
+       <%= render'shared/user', user: @user %>
+    </a>
+    <div class="bio">
+        <h3>Bio</h3>
+        <p><%= @user.bio%></p>
+    </div>
+        <%@user.recent_posts.each do |post| %>
+          <a href = "/users/<%=@user.id%>/posts/<%=post.id%>">
+           <div class="post-snippet">
+              <%= render'shared/post', post: post%>
+               <%= render 'shared/reaction', post:post%>
+            </div>   
+          </a>
+        <% end %>
+        <a href="/users/<%= @user.id %>/posts" class="border">See all posts</a>
+</div>
