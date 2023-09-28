@@ -1,0 +1,12 @@
+<div class="container">
+    <div>
+        <h1>Add Comment</h1>
+           <%= form_with model: @comment , url: user_post_comments_path, local: true do |form| %>
+             <div class="form-group">
+                <%= form.label :text , class:"text-area-label"%>
+                <%= form.text_area :text , class: "form-control", placeholder: "Add a Comment"%>
+                </div>
+                <%=  form.submit "Add comment", class:"btn"%>
+            <%end%>  
+        <div>
+</div>

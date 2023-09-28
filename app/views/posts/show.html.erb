@@ -7,7 +7,11 @@
             <p><%= @post.text%></p>
         </div>
         <%= render 'shared/reaction', post:@post%>
-      </div>  
+      </div>   
+        <div class="activities">
+          <%= link_to 'Add new comment', "/users/#{@current_user.id}/posts/#{@post.id}/comments/new", class: "btn btn-link"%>
+          <%= render 'shared/like', locals: {like: Like.new, post_id: @post.id, user_id: @post.author.id}%>
+          </div>
         <%= render 'shared/comment', comments: @post.comments unless @post.comments.empty? %> 
     </div>  
  </a>
