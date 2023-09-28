@@ -1,1 +1,16 @@
-<h1>List user posts</h1>
+<div class="container">
+<%= render 'shared/user', user: @author %>
+<%@posts.each do |post|%>
+    <a href= "/users/<%=post.author.id%>/posts/<%= post.id %>">
+      <div class= "container-post">
+        <div class ="post-snippet">
+         <%= render 'shared/post', post: post%>
+         <%= render 'shared/reaction', post:post%>
+         </div>
+         <%= render 'shared/comment', comments:post.recent_comments unless post.recent_comments.empty?%>
+       </div>  
+    </a>
+    <% end %>
+    
+       <a href="/users/<%=  @author.id  %>/posts" class="border">1</a>
+</div> 

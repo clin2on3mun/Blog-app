@@ -1,1 +1,10 @@
-<h1>List of Users</h1>
+<% if @users.empty? %>
+  <h3>No user found</h3>
+<% end %>
+<div class="container">
+    <% @users.each do |user| %>
+        <a href="/users/<%= user.id%>" class="text-decoration">
+            <%= render 'shared/user', user: user %>
+        </a>
+   <% end %>    
+</div>
