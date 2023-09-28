@@ -73,7 +73,7 @@ img {
 .container-post {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
 }
 
 .post-details {
@@ -93,4 +93,50 @@ img {
   border: 1px solid black;
   padding: 1%;
   align-self: center;
+}
+
+.activities {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-link {
+  border: 1px solid black;
+}
+
+.btn {
+  padding: 8px;
+  box-shadow: 1px 4px black;
+  background-color: white;
+  outline: none;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 8px;
+}
+
+.text-area-label {
+  align-self: flex-start;
+}
+
+textarea.form-control {
+  width: 100%;
+  height: 150px;
+}
+
+form .btn {
+  align-self: flex-start;
 }
