@@ -6,6 +6,9 @@
         <h3>Bio</h3>
         <p><%= @user.bio%></p>
     </div>
+    <div>
+      <%= link_to 'Add new post', "/users/#{@user.id}/posts/new", class: "btn btn-link"%>
+      </div>
         <%@user.recent_posts.each do |post| %>
           <a href = "/users/<%=@user.id%>/posts/<%=post.id%>">
            <div class="post-snippet">
