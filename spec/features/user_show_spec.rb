@@ -31,5 +31,10 @@ RSpec.feature 'User Show Page', type: :feature do
       click_link('new year')
       expect(page).to have_current_path(user_post_path(user_id: @post1.author, id: @post1.id))
     end
+    it 'asserts you can see the user\'s first 3 posts' do
+      expect(page).to have_content(@post1.text)
+      expect(page).to have_content(@post2.text)
+      expect(page).to have_content(@post3.text)
+    end
   end
 end
