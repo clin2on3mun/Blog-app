@@ -5,6 +5,7 @@ RSpec.feature 'User Show Page', type: :feature do
     @user = User.create(name: 'Munana', photo: 'https://placehold.co/200x133', bio: 'He is good programmer')
     @post1 = Post.create(title: 'new year', author: @user, text: 'I am enjoying this new year')
     @post2 = Post.create(title: 'Get it right and getting it wrong', author: @user, text: 'You are wrong nor right')
+    @post3 = Post.create(title: 'Get it right and getting it wrong', author: @user, text: 'You are wrong nor right')
   end
 
   describe 'show page should have contents' do
@@ -14,7 +15,7 @@ RSpec.feature 'User Show Page', type: :feature do
       expect(page).to have_content('Munana')
     end
     it 'show the content Bio and posts' do
-      expect(page).to have_content('Number of posts: 2')
+      expect(page).to have_content('Number of posts: 3')
       expect(page).to have_content('Bio')
       expect(page).to have_content('new year')
       expect(page).to have_content('Get it right and getting it wrong')
