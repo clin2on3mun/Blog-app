@@ -12,7 +12,7 @@
        </div>  
     </a>
     <% end %>
-      <nav>
+      <nav class="pagination">
         <ul>
           <% (1..@total_page).each do|page|%>
           <li><a href="/users/<%= @author.id %>/posts?page=<%= page %>" class="border"><%= page %></a></li>

@@ -25,10 +25,12 @@ RSpec.feature 'Post Index', type: :feature do
       expect(page).to have_content('Likes: 1')
       expect(page).to have_content('1')
     end
-    it "clicking on a post, it redirects me to that post's show page and show pagination section" do
+    it "clicking on a post, it redirects me to that post's show page" do
       visit user_posts_path(@user, page: 1)
       click_link('new year')
       expect(page).to have_current_path(user_post_path(@user, @post1))
+    end
+    it 'check for pagination section' do
       expect(page).to have_selector('.pagination')
     end
   end
