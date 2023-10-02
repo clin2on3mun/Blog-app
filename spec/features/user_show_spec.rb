@@ -16,9 +16,19 @@ RSpec.feature 'User Show Page', type: :feature do
         it 'show the content Bio and posts' do
             expect(page).to have_content('Number of posts: 2')
             expect(page).to have_content('Bio')
-            expect(page).to have_content('I am enjoying this new year')
-            expect(page).to have_content('You are wrong nor right')
+            expect(page).to have_content('new year')
+            expect(page).to have_content('Get it right and getting it wrong')
         end
-        
+        it 'Display the link see all post' do
+            expect(page).to have_link('See all posts', href: "/users/#{@user.id}/posts")
+        end
+        it 'redirect to see all posts' do
+            click_link('See all posts')
+            expect(page).to have_current_path(user_posts_path(@user))
+        end
+        it 'redirect to view post' do
+            click_link('new year')
+            expect(page).to have_current_path(user_post_path(user_id: @post1.author,id: @post1.id ))
+        end
     end 
 end

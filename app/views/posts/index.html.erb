@@ -1,4 +1,5 @@
 <div class="container">
+  
 <%= render 'shared/user', user: @author %>
 <%@posts.each do |post|%>
     <a href= "/users/<%=post.author.id%>/posts/<%= post.id %>">
@@ -11,6 +12,11 @@
        </div>  
     </a>
     <% end %>
-    
-       <a href="/users/<%=  @author.id  %>/posts" class="border">1</a>
+      <nav>
+        <ul>
+          <% (1..@total_page).each do|page|%>
+          <li><a href="/users/<%= @author.id %>/posts?page=<%= page %>" class="border"><%= page %></a></li>
+          <% end %>
+          </ul>
+      </nav> 
 </div> 
