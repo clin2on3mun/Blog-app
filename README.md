@@ -106,6 +106,11 @@ To run the project, execute the following command:
 - Twitter: [@twitterhandle](https://twitter.com/ClintonMunana)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/munana-clinton/)
 
+👤 **Author2**
+
+- GitHub: [Troos](https://github.com/Kgomotso196)
+- Twitter: [Troos](https://twitter.com/t_r_o_o_s)
+- LinkedIn: [Troos](https://www.linkedin.com/in/kgomotso-nacane/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
