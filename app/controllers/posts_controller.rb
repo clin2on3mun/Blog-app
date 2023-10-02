@@ -9,7 +9,7 @@ class PostsController < ApplicationController
       .order(created_at: :asc)
       .offset((current_page.to_i - 1) * per_page)
       .limit(per_page)
-    @total_page = (current_user.posts.count.to_f/per_page).ceil
+    @total_page = (current_user.posts.count.to_f / per_page).ceil
     @author = @posts.first.author unless @posts.first.nil?
   end
 
