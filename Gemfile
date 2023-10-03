@@ -72,4 +72,4 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'
