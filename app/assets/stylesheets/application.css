@@ -141,15 +141,18 @@ form .btn {
   align-self: flex-start;
 }
 
-.label{
+.label {
   align-self: flex-start;
 }
-.sign-up{
+
+.sign-up {
   width: 100%;
 }
-.links{
+
+.links {
   color: blue;
 }
-.links:hover{
-   text-decoration: underline;
+
+.links:hover {
+  text-decoration: underline;
 }
