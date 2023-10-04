@@ -140,3 +140,19 @@ textarea.form-control {
 form .btn {
   align-self: flex-start;
 }
+
+.label {
+  align-self: flex-start;
+}
+
+.sign-up {
+  width: 100%;
+}
+
+.links {
+  color: blue;
+}
+
+.links:hover {
+  text-decoration: underline;
+}
