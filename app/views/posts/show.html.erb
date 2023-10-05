@@ -5,6 +5,8 @@
         <div>
             <span><%= @post.title%></span> by: <span> <%= @post.author.name%><span>
             <p><%= @post.text%></p>
+            <%= link_to 'Delete Post', "/users/#{@current_user.id}/posts/#{@post.id}", class: 'btn btn-link', data: { turbo_method: :delete } if can? :destroy, @post %>
+
         </div>
         <%= render 'shared/reaction', post:@post%>
       </div>   

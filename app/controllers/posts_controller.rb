@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     current_page = params[:page] || 1
     per_page = 10
@@ -29,6 +31,18 @@ class PostsController < ApplicationController
       redirect_to user_posts_path(current_user), notice: 'Post created successfully'
     else
       render :new
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.likes.destroy_all
+    @post.comments.destroy_all
+    authorize! :destroy, @post
+    if @post.destroy
+      redirect_to user_path(current_user), notice: 'Post deleted successfully'
+    else
+      redirect_to user_path(current_user), alert: 'Failed to delete the post'
     end
   end
 
