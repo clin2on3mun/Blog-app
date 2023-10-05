@@ -12,6 +12,10 @@
     <%= f.label :name, class:"label" %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
   </div>
+  <div class="field">
+     <%= f.label :role, class:"label" %><br />
+  <%= f.select :role, ["user", "admin"], autofocus: true, autocomplete: "role", class: "form-control"%>
+  </div>
   
   <div class="field">
     <%= f.label :password , class:"label"%>
