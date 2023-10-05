@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     current_page = params[:page] || 1
     per_page = 10
@@ -31,7 +33,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
+  
   private
 
   def post_params
