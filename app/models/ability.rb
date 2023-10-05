@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -28,7 +26,7 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
-    user||=User.new
+    user ||= User.new
     can :read, :all
     can :manage, [Post, Comment], author_id: user.id
     can :manage, [Post, Comment] if user.role == 'admin'
