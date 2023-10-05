@@ -16,6 +16,17 @@ Rails.application.routes.draw do
       resource :likes, only: [:create]
     end
   end
+  
+  namespace :api, defaults: { format: 'json' } do
+    resources :users, only: [:show] do
+      resources :posts, only: [:index]
+    end
+  
+    resources :posts, only: [] do
+      resources :comments, only: [:index, :create]
+    end
+  end
+  
     
   # Defines the root path route ("/")
   # root "articles#index"
