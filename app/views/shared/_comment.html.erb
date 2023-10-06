@@ -2,7 +2,7 @@
    <% comments.each do |comment| %>
      <p>
        <%= comment.author.name%>: <%= comment.text%>
-       <%= link_to 'Delete Comment',user_post_comment_path(@current_user.id, @post, comment),class: 'btn btn-link', data: { turbo_method: :delete } if can? :destroy, comment %>
+       <%= link_to 'Delete Comment',user_post_comment_path(@current_user.id, comment.post_id, comment),class: 'btn btn-link', data: { turbo_method: :delete } if can? :destroy, comment %>
 
      </p>
    <% end %>  
